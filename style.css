@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 100px 1fr 100px;
+    padding-left: 350px;
+    padding-right: 350px;
+    font-family: 'IM Fell DW Pica', serif;
+    font-family: 'Inter', sans-serif;
+    background-image: url(./img/fundo.jfif);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* ESTILIZAÇÃO DO TÍTULO */
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: white;
+}
+
+img[alt~=logo]{
+    height: 3em;
+    border-radius: 0;
+}
+
+
+/* ORGANIZAÇÃO DAS IMAGENS */
+
+
+.galeria{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    "f1 f1 f1 f1 f1 f2 f2 f2 f3 f3 f3"
+    "f1 f1 f1 f1 f1 f4 f4 f4 f5 f5 f5"
+    "f6 f6 f6 f7 f7 f7 f8 f8 f8 f8 f8";
+    gap: 12px;
+}
+
+
+/* ESTILIZAÇÃO IMAGENS*/
+
+
+.foto{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 1s;
+}
+
+
+/* DEFINIÇÃO DAS IMAGENS */
+
+
+.foto:nth-child(1){
+    grid-area: f1;
+    background-image: url(./img/img5.webp);
+}
+
+.foto:nth-child(2){
+    grid-area: f2;
+    background-image: url(./img/img3.jfif);
+}
+
+.foto:nth-child(3){
+    grid-area: f3;
+    background-image: url(./img/img2.webp);
+}
+
+.foto:nth-child(4){
+    grid-area: f4;
+    background-image: url(./img/img10.webp);
+}
+
+.foto:nth-child(5){
+    grid-area: f5;
+    background-image: url(./img/img1.jfif);
+}
+
+.foto:nth-child(6){
+    grid-area: f6;
+    background-image: url(./img/img4.jpg);
+}
+
+.foto:nth-child(7){
+    grid-area: f7;
+    background-image: url(./img/img6.jpg);
+}
+
+.foto:nth-child(8){
+    grid-area: f8;
+    background-image: url(./img/img11.jpg);
+}
+
+
+/* ESTILIZAÇÃO FAIXA DE INFORMAÇÕES */
+
+
+.foto__info{
+    position: absolute;
+    width: 100%;
+    height: 48px;
+    bottom: 0;
+    background-color: rgb(25,25,112,0.7);
+    transform: translateY(100%);
+    transition: 1s;
+    color: white;
+    border-radius: 0px 0px 10px 10px;
+    display: grid;
+}
+
+.foto__info a{
+    color: white;
+    text-decoration: none;
+    place-self: center;
+    font-size: 1.2em;
+}
+
+/* ANIMAÇÃO FAIXA DE INFORMAÇÕES */
+
+
+.foto:hover > .foto__info{
+    transform: translateY(0%);
+}
+
+.foto__info a:hover{
+    text-decoration: underline;
+}
+
+/* BOTÃO "VIEW MORE" */
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ver__mais {
+    border-radius: 50px;
+    background-color: #191970;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+}
+
+.ver__mais * {
+    text-decoration: none;
+    color: white;
+}
+
+.ver__mais:hover {
+    background-color: #1c1c80;
+    border-style: solid;
+    border-color: #191970;
+    transform: scale(1.1);
+}
+
+
+/* REPONSIVIDADE */
+
+
+@media (max-width:768px){
+
+    body{
+        height: auto;
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    .galeria{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .foto{
+        width: 100%;
+        height: 33vh;
+    }
+}
